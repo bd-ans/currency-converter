@@ -31,6 +31,7 @@ body {
   margin: 0;
   font-family: "Oxygen", sans-serif;
   font-weight: 400;
+  background-color: #007bff;
 }
 
 .container {
@@ -39,4 +40,12 @@ body {
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.main {
+  height: 100vh;
+}
+
+.converter {
+  background-color: #0fff;
 }

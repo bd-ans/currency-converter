@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Genera Alt Light"; 
+  font-style: normal;
+  font-weight: 400;
+  src: "./fonts/GeneraAltLight-ALEGD.otf" format("otf"),
+  url("./fonts/GeneraAltLight-ALEGD.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Genera SemiBold";
+  font-weight: bold;
+  src: "./fonts/GeneraSemibold-qZmod.otf" format("otf"), 
+  url("./fonts/GeneraSemibold-qZmod.otf") format("otf");
+}

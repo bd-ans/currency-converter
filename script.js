@@ -58,7 +58,8 @@ exchangeBtn.addEventListener("click", function(exchange) {
   var element = document.getElementById("mainAnsverBox");
   element.scrollTop = element.scrollHeight;
 });
-
+// EDN FUNCTION FOR EXCHANGE CLICK
+// START FUNCTION FOR REPEAT EXCHANGE CLICK
 repeatBtn.addEventListener("click", function(repeat) {
   repeat.preventDefault();
   usdInput.value = "";
@@ -79,4 +80,4 @@ repeatBtn.addEventListener("click", function(repeat) {
   var element = document.getElementById("mainAnsverBox");
   element.scrollTop = element.scrollHeight;
 });
-// EDN FUNCTION FOR EXCHANGE CLICK
+// EDN FUNCTION FOR REPEAT EXCHANGE CLICK

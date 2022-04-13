@@ -5,13 +5,16 @@ let uzsInput = document.querySelector("#uzs-input");
 let repeatBtn = document.querySelector("#repeat_exchange_btn");
 let exchangeBtn = document.querySelector("#exchange-btn");
 let mainAsnver_Box = document.querySelector("#mainAnsverBox");
-let usdTxt = " USD = ";
-let uzsTxt = " UZS";
+let bbodny = document.querySelector("body");
 let rexchange = true;
 
-// uzsTitle.innerHTML = "UZS";
-// usdTitle.innerHTML = "USD";
 
+bbodny.addEventListener('keyup', function(event) {
+  if (event.keyCode === 9) {
+event.preventDefault();
+document.getElementById("repeat_exchange_btn").click();
+}
+});
 
 usdInput.placeholder.style = "quanity";
 usdInput.style.border = "1px solid #fff";
@@ -22,8 +25,13 @@ usdInput.addEventListener('keyup', function(event) {
   if (event.keyCode === 13) {
 event.preventDefault();
 document.getElementById("exchange-btn").click();
+} if (event.keyCode === 9) {
+  event.preventDefault();
+  document.getElementById("repeat_exchange_btn").click();
 }
 });
+
+
 // END FUNCTION FOR EXCHANGE KEYUP
 
 // START FUNCTION FOR REPEAT EXCHANGE CLICK
@@ -59,11 +67,9 @@ repeatBtn.onclick = function() {
 exchangeBtn.addEventListener("click", function(exchange) {
   exchange.preventDefault();
   if (rexchange == true) {
-    let usdValue = Number(usdInput.value);
-  // let uzsValue = Number(uzsInput.value);
+  let usdValue = Number(usdInput.value);
 
   let usdNumber = Number(usdInput.value);
-  let uzsNumber = Number(uzsInput.value);
 
   if (usdValue == "" || usdInput.value.length > 10) {
     usdInput.style.border = "1px solid red";
@@ -87,12 +93,9 @@ exchangeBtn.addEventListener("click", function(exchange) {
 
   mainAsnver_Box.appendChild(mainAnsverBox);
 
-
   var element = document.getElementById("mainAnsverBox");
   element.scrollTop = element.scrollHeight;
   } else {
-
-
   let usdValue = Number(usdInput.value);
   let usdNumber = Number(usdInput.value);
 

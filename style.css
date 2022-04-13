@@ -155,3 +155,7 @@ body {
   color: #ffffffaf;
   opacity: .9;
 }
+
+.transform-box-btn {
+  outline: none;
+}

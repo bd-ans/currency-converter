@@ -16,8 +16,34 @@
 
   <main class="main container-fluid d-flex justify-content-center align-items-center">
     <div class="main-inner row">
-      <div class="converter">
-        <h2 class="converter-title text-center">Currency Converter</h2>
+      <div class="converter position-relative">
+        <h2 class="converter-title text-center">
+          Currency Converter
+        </h2>
+        <form class="convert-box">
+          <div class="convert-box-inner d-flex justify-content-between">
+            <div class="convert-box-inner-left-main me-5">
+              <h4 class="convert-box-inner-left-main-title" id="usd-title">
+                USD
+              </h4>
+              <input class="convert-box-inner-left-input" id="usd-input" type="number" required placeholder="quantity">
+            </div>
+            <div class="transform-box d-flex justify-content-center align-items-center">
+              <button class="transform-box-btn border-0 p-0 mt-4 mb-0 d-flex justify-content-center align-items-center bg-transparent" id="repeat_exchange_btn" type="button">
+                <img class="transform-box-btn__img mt-1 p-0" width="24" height="24" src="./img/reverse.svg" alt="transform" id="transform-box-btn__img">
+              </button>
+            </div>
+            <div class="convert-box-inner-right-main ms-5">
+              <h4 class="convert-box-inner-right-main-title" id="uzs-title">
+                UZS
+              </h4>
+              <input class="convert-box-inner-right-input" id="uzs-input" type="number" disabled>
+            </div>
+          </div>
+          <button class="convert-box-exchange-btn mt-4" type="button" id="exchange-btn">Exchange</button>
+        </form>
+        <ol class="main-anver-box" id="mainAnsverBox">
+        </ol>
       </div>
     </div>
   </main>

@@ -10,6 +10,7 @@ let bbodny = document.querySelector("body");
 let rexchange = true;
 
 
+
 bbodny.addEventListener('keyup', function(event) {
   if (event.keyCode === 9) {
 event.preventDefault();
@@ -69,7 +70,6 @@ exchangeBtn.addEventListener("click", function(exchange) {
   let usdValue = Number(usdInput.value);
 
   let usdNumber = Number(usdInput.value);
-  console.log(usdNumber);
 
   if (usdValue == "" || usdInput.value.length > 10) {
     usdInput.style.border = "1px solid #ff9966";
@@ -94,7 +94,6 @@ exchangeBtn.addEventListener("click", function(exchange) {
     usdInput.placeholder = "quanity";
     warningTxt.innerHTML = "";
   }
-
 
   usdNumber = usdNumber*11325,00;
   uzsInput.value = usdNumber + " SUM";
@@ -122,6 +121,19 @@ exchangeBtn.addEventListener("click", function(exchange) {
     usdInput.style.border = "1px solid #fff";
     usdInput.style.boxShadow = "2px 2px 5px #b2b2b2";
     usdInput.placeholder = "quanity";
+  }
+
+  if (isNaN(usdValue)) {
+    usdInput.style.border = "1px solid #ff9966";
+    usdInput.style.boxShadow = "2px 2px 5px #ff9966";
+    usdInput.placeholder = "Enter correct quanity";
+    warningTxt.innerHTML = "please just enter a number";
+    return;
+  } else {
+    usdInput.style.border = "1px solid #fff";
+    usdInput.style.boxShadow = "2px 2px 5px #b2b2b2";
+    usdInput.placeholder = "quanity";
+    warningTxt.innerHTML = "";
   }
 
   usdNumber = usdNumber* 0.000098;

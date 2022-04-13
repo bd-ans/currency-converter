@@ -7,6 +7,10 @@ let exchangeBtn = document.querySelector("#exchange-btn");
 let mainAsnver_Box = document.querySelector("#mainAnsverBox");
 let usdTxt = " USD = ";
 let uzsTxt = " UZS";
+let rexchange = true;
+
+// uzsTitle.innerHTML = "UZS";
+// usdTitle.innerHTML = "USD";
 
 
 usdInput.placeholder.style = "quanity";
@@ -21,17 +25,47 @@ document.getElementById("exchange-btn").click();
 }
 });
 // END FUNCTION FOR EXCHANGE KEYUP
+
+// START FUNCTION FOR REPEAT EXCHANGE CLICK
+repeatBtn.onclick = function() {
+  if (rexchange == true) {
+    rexchange = false;
+  } else {
+    rexchange = true;
+  }
+  if (rexchange == true) {
+    uzsTitle.innerHTML = "UZS";
+    usdTitle.innerHTML = "USD";
+    uzsTitle.classList.add("convert-box-inner-right-main-title");
+    usdTitle.classList.add("convert-box-inner-left-main-title");
+    uzsTitle.classList.remove("convert-box-inner-left-main-title");
+    usdTitle.classList.remove("convert-box-inner-right-main-title");
+    usdInput.value = "";
+    uzsInput.value = "";
+  } else {
+    uzsTitle.innerHTML = "USD";
+    usdTitle.innerHTML = "UZS";
+    uzsTitle.classList.remove("convert-box-inner-right-main-title");
+    usdTitle.classList.remove("convert-box-inner-left-main-title");
+    uzsTitle.classList.add("convert-box-inner-left-main-title");
+    usdTitle.classList.add("convert-box-inner-right-main-title");
+    usdInput.value = "";
+    uzsInput.value = "";
+  }
+}
+// EDN FUNCTION FOR REPEAT EXCHANGE CLICK
+
 // START FUNCTION FOR EXCHANGE CLICK
 exchangeBtn.addEventListener("click", function(exchange) {
   exchange.preventDefault();
-
-  let usdValue = Number(usdInput.value);
+  if (rexchange == true) {
+    let usdValue = Number(usdInput.value);
   // let uzsValue = Number(uzsInput.value);
 
   let usdNumber = Number(usdInput.value);
   let uzsNumber = Number(uzsInput.value);
 
-  if (usdValue == "" || usdInput.value.length > 13) {
+  if (usdValue == "" || usdInput.value.length > 10) {
     usdInput.style.border = "1px solid red";
     usdInput.style.boxShadow = "2px 2px 5px red";
     usdInput.placeholder = "Enter correct quanity";
@@ -42,13 +76,12 @@ exchangeBtn.addEventListener("click", function(exchange) {
     usdInput.placeholder = "quanity";
   }
 
-  usdNumber = usdNumber*11367;
-  uzsNumber = uzsNumber*0.0098;
+  usdNumber = usdNumber*11325,00;
   uzsInput.value = usdNumber + " SUM";
   
   let mainAnsverBox = document.createElement("li");
   let mainAnsver = document.createElement("p");
-  mainAnsver.textContent = usdValue + usdTxt + usdNumber + uzsTxt;
+  mainAnsver.textContent = usdValue + " USD = " + usdNumber + " UZS";
 
   mainAnsverBox.append(mainAnsver);
 
@@ -57,27 +90,37 @@ exchangeBtn.addEventListener("click", function(exchange) {
 
   var element = document.getElementById("mainAnsverBox");
   element.scrollTop = element.scrollHeight;
-});
-// EDN FUNCTION FOR EXCHANGE CLICK
-// START FUNCTION FOR REPEAT EXCHANGE CLICK
-repeatBtn.addEventListener("click", function(repeat) {
-  repeat.preventDefault();
-  usdInput.value = "";
-  uzsInput.value = "";
-  mainAsnver_Box.innerHTML = "";
+  } else {
 
-  usdInput.style.border = "1px solid #fff";
-  usdInput.style.boxShadow = "2px 2px 5px #b2b2b2";
-  usdInput.placeholder = "quanity";
 
-  uzsInput.style.border = "1px solid #fff";
-  uzsInput.style.boxShadow = "2px 2px 5px #b2b2b2";
-  uzsInput.placeholder = "quanity";
+  let usdValue = Number(usdInput.value);
+  let usdNumber = Number(usdInput.value);
 
-  usdTitle.textContent = "USD";
-  uzsTitle.textContent = "UZS";
+  if (usdValue == "" || usdInput.value.length > 10) {
+    usdInput.style.border = "1px solid red";
+    usdInput.style.boxShadow = "2px 2px 5px red";
+    usdInput.placeholder = "Enter correct quanity";
+    return;
+  } else {
+    usdInput.style.border = "1px solid #fff";
+    usdInput.style.boxShadow = "2px 2px 5px #b2b2b2";
+    usdInput.placeholder = "quanity";
+  }
+
+  usdNumber = usdNumber* 0.000098;
+  uzsInput.value = usdNumber + " USD";
+  
+  let mainAnsverBox = document.createElement("li");
+  let mainAnsver = document.createElement("p");
+  mainAnsver.textContent = usdValue + " USZ = " + usdNumber + " USD";
+
+  mainAnsverBox.append(mainAnsver);
+
+  mainAsnver_Box.appendChild(mainAnsverBox);
+
 
   var element = document.getElementById("mainAnsverBox");
   element.scrollTop = element.scrollHeight;
+}
 });
-// EDN FUNCTION FOR REPEAT EXCHANGE CLICK
+// EDN FUNCTION FOR EXCHANGE CLICK

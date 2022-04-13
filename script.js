@@ -9,13 +9,19 @@ let usdTxt = " USD = ";
 let uzsTxt = " UZS";
 
 
-
-
-
 usdInput.placeholder.style = "quanity";
 usdInput.style.border = "1px solid #fff";
 usdInput.style.boxShadow = "2px 2px 5px #b2b2b2";
 
+// START FUNCTION FOR EXCHANGE KEYUP
+usdInput.addEventListener('keyup', function(event) {
+  if (event.keyCode === 13) {
+event.preventDefault();
+document.getElementById("exchange-btn").click();
+}
+});
+// END FUNCTION FOR EXCHANGE KEYUP
+// START FUNCTION FOR EXCHANGE CLICK
 exchangeBtn.addEventListener("click", function(exchange) {
   exchange.preventDefault();
 
@@ -25,7 +31,7 @@ exchangeBtn.addEventListener("click", function(exchange) {
   let usdNumber = Number(usdInput.value);
   let uzsNumber = Number(uzsInput.value);
 
-  if (usdValue == "" || usdInput.value.length > 8) {
+  if (usdValue == "" || usdInput.value.length > 13) {
     usdInput.style.border = "1px solid red";
     usdInput.style.boxShadow = "2px 2px 5px red";
     usdInput.placeholder = "Enter correct quanity";
@@ -52,3 +58,25 @@ exchangeBtn.addEventListener("click", function(exchange) {
   var element = document.getElementById("mainAnsverBox");
   element.scrollTop = element.scrollHeight;
 });
+
+repeatBtn.addEventListener("click", function(repeat) {
+  repeat.preventDefault();
+  usdInput.value = "";
+  uzsInput.value = "";
+  mainAsnver_Box.innerHTML = "";
+
+  usdInput.style.border = "1px solid #fff";
+  usdInput.style.boxShadow = "2px 2px 5px #b2b2b2";
+  usdInput.placeholder = "quanity";
+
+  uzsInput.style.border = "1px solid #fff";
+  uzsInput.style.boxShadow = "2px 2px 5px #b2b2b2";
+  uzsInput.placeholder = "quanity";
+
+  usdTitle.textContent = "USD";
+  uzsTitle.textContent = "UZS";
+
+  var element = document.getElementById("mainAnsverBox");
+  element.scrollTop = element.scrollHeight;
+});
+// EDN FUNCTION FOR EXCHANGE CLICK

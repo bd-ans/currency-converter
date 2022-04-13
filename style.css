@@ -51,6 +51,7 @@ body {
   font-weight: 700;
   margin-bottom: 20px;
   color: #fff;
+  user-select: none;
 }
 
 #usd-input,
@@ -60,9 +61,9 @@ body {
   border: 1px solid #fff;
   box-shadow: 2px 2px 5px #b2b2b2;
   border-radius: 3px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 6px;
   color: #fff;
   font-size: 20px;
 }
@@ -89,7 +90,7 @@ body {
   border: 1px solid #ffffff;
   border-radius: 4px;
   box-shadow: 2px 2px 5px #b2b2b2;
-  padding: 3px 9px;
+  padding: 4px 9px;
   font-size: 20px;
   opacity: .8;
   font-weight: 700;
@@ -138,6 +139,15 @@ body {
   padding-left: 24px;
 }
 
+.transform-box-btn__img {
+  opacity: .7;
+}
+
+.transform-box-btn__img:hover {
+  opacity: 1;
+  transition: .2s ease-in-out;
+}
+
 .main-anver-box::-webkit-scrollbar {
   width: 8px;
   border-radius: 8px;
@@ -159,4 +169,13 @@ body {
 
 .transform-box-btn {
   outline: none;
+}
+
+.convert-box-inner-left-main__warning-text {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  user-select: none;
+  height: 18px;
+  color: #ffcc00;
 }

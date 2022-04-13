@@ -26,11 +26,12 @@
               <h4 class="convert-box-inner-left-main-title" id="usd-title">
                 USD
               </h4>
-              <input class="convert-box-inner-left-input" id="usd-input" type="number" required placeholder="Quantity" maxlength="10">
+              <input class="convert-box-inner-left-input" id="usd-input" type="text" required placeholder="Quantity" maxlength="10">
+              <p class="convert-box-inner-left-main__warning-text my-0 mt-0 mx-1 p-0" id="warning-txt"></p>
             </div>
             <div class="transform-box d-flex justify-content-center align-items-center">
-              <button class="transform-box-btn border-0 p-0 mt-4 mb-0 d-flex justify-content-center align-items-center bg-transparent" id="repeat_exchange_btn" type="button">
-                <img class="transform-box-btn__img mt-1 p-0" width="24" height="24" src="./img/reverse.svg" alt="transform" id="transform-box-btn__img">
+              <button class="transform-box-btn border-0 p-0 mt-3 mb-0 d-flex justify-content-center align-items-center bg-transparent" id="repeat_exchange_btn" type="button">
+                <img class="transform-box-btn__img p-0" width="24" height="24" src="./img/reverse.svg" alt="transform" id="transform-box-btn__img">
               </button>
             </div>
             <div class="convert-box-inner-right-main ms-5">
@@ -40,9 +41,9 @@
               <input class="convert-box-inner-right-input" id="uzs-input" type="text" disabled>
             </div>
           </div>
-          <button class="convert-box-exchange-btn mt-4" type="button" id="exchange-btn">Exchange</button>
+          <button class="convert-box-exchange-btn mt-1" type="button" id="exchange-btn">Exchange</button>
         </form>
-        <ol class="main-anver-box mt-4" id="mainAnsverBox">
+        <ol class="main-anver-box mt-2" id="mainAnsverBox">
         </ol>
       </div>
     </div>

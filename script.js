@@ -147,7 +147,6 @@ exchangeBtn.addEventListener("click", function(exchange) {
 
   mainAsnver_Box.appendChild(mainAnsverBox);
 
-
   var element = document.getElementById("mainAnsverBox");
   element.scrollTop = element.scrollHeight;
 }
